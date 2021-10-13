@@ -1,9 +1,11 @@
 import junit.framework.*; 
 import java.util.*;
 
+import org.junit.Test;
+
 public class Lab8Tester extends TestCase
 {
-	
+	@Test
 	public void testAddAndSize()
 	{
 		MyList list = new MyArrayList();
@@ -17,7 +19,7 @@ public class Lab8Tester extends TestCase
 		list.add("third");
 		assertEquals("size does not increase correctly when multiple objects are added", 3, list.size());
 	}
-	
+	@Test
 	public void testGet()
 	{
 		MyList list = new MyArrayList();
@@ -49,7 +51,7 @@ public class Lab8Tester extends TestCase
 		assertNull("get(too big index) returned value is not null", obj);
 		assertEquals("size should not change when get(too big index) is called", 3, list.size());
 	}
-	
+	@Test
 	public void testInsertFirst()
 	{
 		MyList list = new MyArrayList();
@@ -66,7 +68,7 @@ public class Lab8Tester extends TestCase
 		assertNotNull("Value at index 0 is null", obj);
 		assertEquals("Incorrect value inserted at index 0", "insert", obj);
 	}
-	
+	@Test
 	public void testRemoveFirst()
 	{
 		MyList list = new MyArrayList();		
@@ -80,7 +82,7 @@ public class Lab8Tester extends TestCase
 		assertEquals("The size of list did not change after calling remove()", 2, list.size());
 		assertEquals("remove(0) did not return the correct value", "first", obj);
 	}
-	
+	@Test
 	public void testRemoveLast()
 	{
 		MyList list = new MyArrayList();		
@@ -94,7 +96,7 @@ public class Lab8Tester extends TestCase
 		assertEquals("The size of list did not change after calling remove()", 2, list.size());
 		assertEquals("remove(last index) did not return the correct value", "third", obj);
 	}
-	
+	@Test
 	public void testRemoveMiddle()
 	{
 		MyList list = new MyArrayList();		
@@ -108,7 +110,7 @@ public class Lab8Tester extends TestCase
 		assertEquals("The size of list did not change after calling remove()", 2, list.size());
 		assertEquals("remove(middle index) did not return the correct value", "second", obj);
 	}
-	
+	@Test
 	public void testRemoveNegative()
 	{
 		MyList list = new MyArrayList();		
@@ -121,7 +123,7 @@ public class Lab8Tester extends TestCase
 		assertNull("remove(index < 0) did not return null", obj);
 		assertEquals("The size of list changed after calling remove(index < 0)", 3, list.size());
 	}
-	
+	@Test
 	public void testRemoveTooBig()
 	{
 		MyList list = new MyArrayList();		
@@ -134,7 +136,7 @@ public class Lab8Tester extends TestCase
 		assertNull("remove(index > size) did not return null", obj);
 		assertEquals("The size of list changed after calling remove(index > size)", 3, list.size());
 	}
-	
+	@Test
 	public void testIsEmpty()
 	{
 		MyList list = new MyArrayList();		
@@ -153,7 +155,7 @@ public class Lab8Tester extends TestCase
 		list.remove(0);
 		assertTrue("new list should be empty after removing all elements", list.isEmpty());
 	}
-	
+	@Test
 	public void testContains()
 	{
 		MyList list = new MyArrayList();		
@@ -170,7 +172,7 @@ public class Lab8Tester extends TestCase
 		list.add("third");
 		assertTrue("Did not detect duplicated element", list.contains("third"));
 	}
-	
+	@Test
 	public void testRemoveObject()
 	{
 		MyList list = new MyArrayList();		
@@ -199,7 +201,7 @@ public class Lab8Tester extends TestCase
 		assertEquals("size did not change after remove", 3, list.size());
 		assertEquals("Did not remove FIRST OCCURENCE of duplciated object", "first", list.get(0));
 	}
-	
+	@Test
 	public void testSet()
 	{
 		MyList list = new MyArrayList();		
@@ -237,7 +239,7 @@ public class Lab8Tester extends TestCase
 		assertEquals("set(too big index) should not change any values", "new second", list.get(1));
 		assertEquals("set(too big index) should not change any values", "new third", list.get(2));
 	}
-	
+	@Test
 	public void testRandomValues()
 	{
 		MyList list = new MyArrayList();		
