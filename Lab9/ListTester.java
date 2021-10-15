@@ -20,20 +20,24 @@ public class ListTester
 		//Create a MyArrayList to test
 		MyList list = new ImprovedArrayList();
 		
-		//Test that a new list starts at size 0
-		System.out.println("size() returns "+ list.size() + ", should be 0");
-		
-		//Add an object to the list
-		list.add("first");
-		
-		//Test that the size() method works after a single object has been added
-		System.out.println("size() returns "+ list.size() + ", should be 1");
-		
-		//Add a few more objects
+		list.add("first");		
 		list.add("second");
 		list.add("third");
+
+		list.remove("first");
+		list.add(0, "first");
+		System.out.println("////////////");
+		list.remove("second");
+		list.add(1, "second");
+		System.out.println("////////////");
+		list.remove("third");
+		list.add(2, "third");
 		
-		//Test that that size() method works correctly after more than 1 object have been added
-		System.out.println("size() returns "+ list.size() + ", should be 3");
+		list.remove("spoon");
+		list.add(0, "third");
+
+		// System.out.println(list.toString());
+		// list.remove("third");
+		// System.out.println(list.toString());
 	}
 }
