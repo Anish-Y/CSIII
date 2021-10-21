@@ -7,6 +7,7 @@ public class StringArrayList extends MyArrayList implements StringList
 	 */
 	public boolean add(Object obj)
 	{
+		if(!(obj instanceof String)) return false;
 		//Do whatever MyArrayList does for this method
 		return super.add(obj);
 	}
@@ -19,7 +20,7 @@ public class StringArrayList extends MyArrayList implements StringList
 	public void add(int index, Object obj)
 	{
 		//Do whatever MyArrayList does for this method
-		super.add(index, obj);
+		if(obj instanceof String) super.add(index, obj);
 	}
 	
 	/**
@@ -29,22 +30,27 @@ public class StringArrayList extends MyArrayList implements StringList
 	 */
 	public Object set(int index, Object obj)
 	{
+		if(!(obj instanceof String)) return null;
 		//Do  whatever MyArrayList does for this method
-		super.set(index, obj);
+		return super.set(index, obj);
 	}
 	
 	public String getStr(int index)
 	{
-		return null;
+		Object obj = get(index);
+		return obj != null? (String) obj: null;
 	}
 	
 	public String removeStr(int index)
 	{
-		return null;
+		Object obj = remove(index);
+		return obj != null? (String) obj: null;
 	}
 	
 	public String setStr(int index, String str)
 	{
-		return null;
+		Object obj = set(index, str);
+		return  obj != null? (String) obj: null;
 	}
+
 }
